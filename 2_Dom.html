@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2>This is a header of the page</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, non at.
+        Eligendi, provident ratione in nihil illo fugit ea voluptatem at, omnis
+        repellendus amet pariatur corporis repudiandae quo atque cum ex. Quidem,
+        non ullam!
+      </p>
+    </div>
+
+    <hr />
+    <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>Js</li>
+        <!--<li> React </li> -->
+    </ul>
+
+    <script>
+        // let heading = document.createElement("h3");
+        // console.log(heading);
+        // heading.textcontent = "React";
+        // let myDiv = document.getElementById("React");
+        // let heading = document.getElementByTarget("myq1Div")
+        // console.log(react); 
+    // --------------------------------------------------------------------- //
+    
+    let ul = document.querySelector("ul"); 
+    let li = document.createElement("li");
+    li.textContent = "React";
+    ul.appendChild(li);
+    // --------------------------------------------------------------------- //
+
+  let myTable = document.getElementById("myTable");
+  let row = document.createElement("tr");
+  console.log(row);
+  let td1 = document.createElement("td");
+  td1.textContent = "Alice";
+  let td2 = document.createElement("td");
+  td2.textContent = 25;
+      
+</script>
+</body>
+</html>
+<!--
+to create element -> createElement("element")
+to add element -> textContent = ""
+to add that element with content -> div.appendChild(heading)
+this appendChild method 
+
+-->
