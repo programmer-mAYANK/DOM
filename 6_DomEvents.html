@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="handelClick()">Click Me</button>   
+    
+    <script>
+        function handelClick() {
+            alert("Button was clicked");
+        }
+
+        let clickBtn = document.getElementById("clickBtn")
+        clickBtn.addEventListener("dblclick", function(){
+            alert("Double click event fired");
+        });
+
+        function rightClick() {
+            alert("rightClick was clicked");
+        }
+    </script>
+</body>
+</html>
+<!--
+Dom events:
+Dom event list
+
+how to add events in elements
+i. inline - onclick, onblclick, oncontextmenu, oniput - no need to target element
+ii. inside script - target element , addEventListener("click" ,callbackfunction)
+// higher order function -> addEventListener(),map(),filter(),reducer()
+// callback function: function inside arguments, no need to call callback function
+-->
