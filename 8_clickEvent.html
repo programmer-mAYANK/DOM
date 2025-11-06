@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Html</li>
+        <li>Css</li>
+        <li>Js</li>
+        <li>Bs</li>
+    </ul>
+    <button id="addBtn">Add Item</button>
+    <button id="addBtn">Delete Item</button>
+
+    <script>
+      let list = document.getElementBy("list");
+      let addItem = document.getElementBy("addBtn");
+      let dltItem = document.getElementBy("dltBtn");
+      
+      additem.addEventListener("click", function() {
+        let newItem = prompt("Which item you want to add?");
+        if(newItem){
+          let li = document.createElement("li");
+          li.textContent = newItem;
+          list.appendChild(li); 
+        }
+    });
+
+    dltBtn.add.addEventListener("Click",function(){
+    let itemToDlt = prompt("Which item you want to remove");
+    
+    if (itemToDlt) {
+        let items = document.getElementByTagName("li");
+        for(let i = 0;i<items.length;i++){
+            // check each li
+            if(items[i].textContent===itemToDlt){
+                list.removeChild(itemsp[i]);
+                return;
+            }
+        }
+        alert("Item not found")
+    }
+    });
+    </script>
+</body> 
+</html>
