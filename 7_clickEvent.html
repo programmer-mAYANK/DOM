@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Html</li>
+        <li>Css</li>
+        <li>Js</li>
+        <li>Bs</li>
+    </ul>
+    <button id="addbtn">Add Item</button>
+    <button id="addItem">Add Another Item</button>
+
+    <script>
+        let addBtn = document.getElementById("addBtn")
+        let list = document.getElementById("list")
+        addBtn.addEventListener("dblclick", function () {
+         let li = document.createElement("li");
+         li.textContent = "React js";
+         list.appendChild(li);
+        });
+
+        anotherClick.addEventListener("dbclick", function (){
+            let li1 = document.createElement("li");
+            li1.textContent = "Angular js"
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>
