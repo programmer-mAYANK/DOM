@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Focus,Blur,input,Submit,Change Events</h3>
+    <!--<form action="">-->
+        <label for="username">Enter Username...</label>
+        <input type="text" id="username" /> <br />
+        <br />
+        <label for="password">Enter Password...</label>
+        <input type="text" id="password" />
+
+        <hr />
+        <h3>Input Event</h3>
+        <input type="text" placeholder="Enter your name.." id="nameInput" />
+        <p id="output"></p> 
+
+        <hr />
+        <h3>preventDefault()Method</h3>
+        <input type="text" id="myInput" required />
+        <button type="submit" id="btn">Submit</button>
+        <p id="txtMsg"></p>
+        <hr />
+        <select name="" id="citySelect">
+            <option disabled selected>Select City</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Pune">Pune</option>
+            <option value="Noida">Noida</option>
+            <option value="Kolkata">Kolkata</option>
+        </select>
+        <p id="selectCity"></p>
+        <hr />
+        <hr />
+        <form id="myForm">
+            <input type="text" name="username" placeholder="Enter Username" required />
+            <button type="submit">Submit</button>
+        </form>
+        <p id="result"></p> 
+    <script>
+    let myForm = document.getElementById("myForm");
+    let result = document.getElementById("result");
+    myForm.addEventListener("submit", function(e){
+        e.preventDefault();
+       const username = e.target.username.value;
+       result.textContent = "Submitted Username: " + username;
+    });
+    let myInput = document.getElementById("Username");
+    myInput.addEventListener("focus", function(){
+     myInput.style.backgroundColor="white";
+    });  
+    let nameInput = document.getElementById("nameInput");
+    let output = document.getElementById("output");
+
+    nameInput.addEventListener("input", function(e){
+     output.textContent = "Hii," + nameInput.value;       
+    });
+
+    let btn = document.getElementById("btn");
+    let txtMsg = document.getElementById("txtMsg");
+    btn.addEventListener("click", function(e){
+     e.preventDefault();
+        txtMsg.textContent = "Form Submitted Successfully...";
+    });
+
+    document.getElementById("citySelect").addEventListener("change", function(){
+     document.getElementById("selectCity").textContent = "You selected: " + this.value;
+    });
+</script>    
+</form>
+</body>
+</html>
