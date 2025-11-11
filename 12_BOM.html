@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: #008cba;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        a{
+            background-color: #008cba;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Browser Object Model</h1>
+    <button id="openWin">Open Window</button>
+    <button id="closeWin">Close Window</button>
+    <button id="reloadBtn">Reload Button</button>
+    <button id="replaceBtn">Replace Button</button><br /><br />
+    <button id="browserInfo">Browser Information</button>
+    <button id="screenInfo">Screen Information</button>
+    <button id="confirmBtn">Procced</button>
+    <button id="urlInfo">URL Information</button>
+    <a href="13_nextPage.html">Next Page</a>
+    <h2>history.length Example</h2>
+    <p id="demo"></p>
+    <script>
+        let openWin = document.getElementById("openWin");
+        let closeWin = document.getElementById("closeWin");
+        let reloadBtn = document.getElementById("reloadBtn");
+        let replaceBtn = document.getElementById("replaceBtn");
+        let browserInfo = document.getElementById("browserInfo");
+        let screenInfo = document.getElementById("screenInfo");
+        let confirmBtn = document.getElementById("confirmBtn");
+        let urlInfo = document.getElementById("urlInfo");
+
+        openWin.addEventListener("click", function(){
+            window.open("https://www.google.com", "_blank", "width=600,height=600");
+        });
+        closeWin.addEventListener("click", function(){
+            window.close();
+        });
+        reloadBtn.addEventListener("click", function(){
+            location.reload();
+        });
+        replaceBtn.addEventListener("click", function(){
+            location.replace("https://www.google.com");
+            location.assign("https://www.google.com");
+        });
+
+        browserInfo.addEventListener("click", function(){
+            let browserInfo = `Browser: ${navigator.appName}\nVersion: ${navigator.appVersion}\nUser-Agent: ${navigator.userAgent}\nPlatform: ${navigator.platform} \nLanguage: ${navigator.language}`;
+            alert(browserInfo);
+        });
+        screenInfo.addEventListener("click", function(){
+            let screenInfo = `Screen Width: ${screen.width}\nScreen Height: ${screen.height}\nAvailable Width: ${screen.availWidth}\nAvailable Height: ${screen.availHeight}\nColor Depth: ${screen.colorDepth}\nPixel Depth: ${screen.pixelDepth}`;
+            alert(screenInfo);
+        });
+        // dialog object - alert,confirm,prompt
+        confirmBtn.addEventListener("click", function() {
+            let res = confirm("Do you want to proceed..?");
+            if(res){
+                alert("You clicked OK!");
+            } else {
+                alert("You clicked CANCEL!");
+            }
+        });
+        // ES6 - setTimeOut(),setInterval
+        // 1s = 1000ms
+        // setTimeout(function(){
+        // console.log("This shows after 2 seconds..");
+        //}, 2000);
+
+        // let count = 0;
+        // let timer = setInterval(function(){
+        // console.log("Running.." + count);
+        // count++;
+
+        // if (count == 5) {
+        //clearInterval(timer);
+        // }
+        //}, 1000);
+
+        document.getElementById("demo").textContent = "Number of pages in history: " + history.length;
+    </script>
+</body>
+</html>
+<!--
+browser information- navigation object
+screen info - screen
+url info - loaction
+window related - window
+
+history.go()
+close
+
+-->
