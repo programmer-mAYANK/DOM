@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Combined window event</h2>
+    <p id="info"></p>
+
+    <script>
+        let info = document.getElementById("info");
+        window.addEventListener("resize", function(){
+            info.innerText = "Window Resized"; 
+        });
+
+        window.addEventListener("keydown", function (e){
+        info.innerText = "Key Pressed: " + e.key;     
+        });
+
+        window.adddEventListener("scroll" , function(e) {
+        info.innerText = "Scrolled to" + window.scrollY;
+        });
+    </script>
+</body>
+</html>
